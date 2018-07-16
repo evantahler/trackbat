@@ -15,7 +15,7 @@ module.exports = class Track extends Action {
 
   async run (data) {
     const host = data.connection.rawConnection.req.headers.host
-    const referer = data.connection.rawConnection.req.headers.referer
+    const referer = data.connection.rawConnection.req.headers.referer || '-'
     const url = data.connection.rawConnection.req.url
     const method = data.connection.rawConnection.req.method
     const ip = data.connection.remoteIP
