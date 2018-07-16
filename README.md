@@ -23,4 +23,6 @@ trackbat.com    facebook.com
 trackbat.com    www.facebook.com
 ```
 
+This project is developed in the open, and be viewed at [https://github.com/evantahler/trackbat](https://github.com/evantahler/trackbat)
+
 Thanks!
