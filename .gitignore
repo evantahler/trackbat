@@ -22,3 +22,5 @@ cache.dump
 # Editor-specific
 /nbproject/*
 /.idea/*
+
+public/index.html

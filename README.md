@@ -1,14 +1,26 @@
-# My actionhero Project
+# TrackBat
+A project to learn more about how much we really are being tracked online.
 
-*visit www.actionherojs.com for more information*
+The savy amongst us know that we can use our `/etc/hosts` file to route sites we don't like to localhost to stop our computers from speaking to trackers.
 
-## To install:
-(assuming you have [node](http://nodejs.org/) and NPM installed)
+```bash
+# cat /etc/hosts
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+127.0.0.1       facebook.com
+127.0.0.1       www.facebook.com
+```
 
-`npm install`
+However, if you point your `/etc/hosts` to trackbat, you can help us gather data about which sites and which endpoints are tracking you!  
 
-## To Run:
-`npm start`
+```bash
+# cat /etc/hosts
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+trackbat.com    facebook.com
+trackbat.com    www.facebook.com
+```
 
-## To Test:
-`npm test`
+Thanks!
