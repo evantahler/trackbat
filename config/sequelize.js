@@ -3,38 +3,19 @@ exports.default = {
     return {
       'autoMigrate': false,
       'loadFixtures': false,
-      'database': 'trackbat-development',
       'dialect': 'postgres',
-      logging: false
+      logging: false,
+      'port': parseInt(process.env.SEQUELIZE_PORT || 5432),
+      'database': process.env.SEQUELIZE_DATABASE || 'trackbat-development',
+      'host': process.env.SEQUELIZE_HOST,
+      'username': process.env.SEQUELIZE_USER,
+      'password': process.env.SEQUELIZE_PASSWORD
     }
   }
 }
 
-// For sequelize-cli
-// Add to the exports below, if you have setup additional environment-specific settings
-
 exports.development = exports.default.sequelize()
-// exports.test = merge(exports.test);
-// exports.production = merge(exports.production);
-
-// Uncomment merge function when adding exports
-
-// const merge = (overlayFn) => {
-//   let mergeObj = {}
-//   for (let attrname in exports.default.sequelize()) {
-//     mergeObj[attrname] = exports.default.sequelize()[attrname]
-//   }
-//   if (typeof (overlayFn) !== 'undefined') {
-//     for (var attrname in overlayFn.sequelize()) {
-//       mergeObj[attrname] = overlayFn.sequelize()[attrname]
-//     }
-//   }
-
-//   mergeObj.sequelize = overlayFn.sequelize
-//   return mergeObj
-// }
-
-// Example test configuration
+exports.production = exports.default.sequelize()
 
 exports.test = {
   sequelize: (api) => {
@@ -46,36 +27,3 @@ exports.test = {
     }
   }
 }
-
-// You can define even more elaborate configurations (including replication).
-// See http://sequelize.readthedocs.org/en/latest/api/sequelize/index.html for more information
-// For example:
-
-// exports.production = {
-//   sequelize: function(api){
-//     return {
-//       "autoMigrate" : false,
-//       "loadFixtures": false,
-//       "logging"     : false,
-//       "database"    : "PRODUCTION_DB",
-//       "dialect"     : "mysql",
-//       "port"        : 3306,
-//       "replication" : {
-//         "write": {
-//           "host"     : "127.0.0.1",
-//           "username" : "root",
-//           "password" : "",
-//           "pool"     : {}
-//         },
-//         "read": [
-//           {
-//             "host"     : "127.0.0.1",
-//             "username" : "root",
-//             "password" : "",
-//             "pool"     : {}
-//           }
-//         ]
-//       }
-//     }
-//   }
-// }
